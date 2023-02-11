@@ -56,8 +56,13 @@ export default function (data) {
                             <h3>Abilities </h3>
                         </div>
                         <div className="wrapper">
-                            {data.poke.abilities.map((x) => (
-                                <PokemonTags text={x.ability.name} abs_tag />
+                            {data.poke.abilities.map((x, index) => (
+                                <div key={index}>
+                                    <PokemonTags
+                                        text={x.ability.name}
+                                        abs_tag
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -67,7 +72,9 @@ export default function (data) {
                         </div>
                         <div className="wrapper">
                             {data.poke.types.map((x) => (
-                                <PokemonTags text={x.type.name} type_tag />
+                                <div key={index}>
+                                    <PokemonTags text={x.type.name} type_tag />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -78,8 +85,8 @@ export default function (data) {
                     className="pokemon-image desktop"
                 />
                 <div className="right">
-                    {data.poke.stats.map((x) => (
-                        <div className="stat">
+                    {data.poke.stats.map((x, index) => (
+                        <div className="stat" key={index}>
                             <div className="title">
                                 <h3>{x.stat.name}</h3>
                             </div>
@@ -95,8 +102,10 @@ export default function (data) {
                 <div className="container">
                     {data.poke.moves
                         .sort((a, b) => a.move.name.localeCompare(b.move.name))
-                        .map((x) => (
-                            <PokemonTags text={x.move.name} />
+                        .map((x, index) => (
+                            <div key={index}>
+                                <PokemonTags text={x.move.name} />
+                            </div>
                         ))}
                 </div>
             </div>

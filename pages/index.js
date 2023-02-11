@@ -44,7 +44,9 @@ export default function Home() {
                 </section>
                 <section className="pokemon-list">
                     {pokemonList?.results?.map((item, index) => (
-                        <PokemonCard item={item} index={index} />
+                        <div key={index}>
+                            <PokemonCard item={item} index={index} />
+                        </div>
                     ))}
                 </section>
             </main>

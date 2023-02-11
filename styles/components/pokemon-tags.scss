@@ -1,0 +1,15 @@
+.pokemon-tags {
+    padding-inline: 0.5em;
+    background-color: #ffeda7;
+    color: #3c5aa6;
+    border-radius: var(--border-radius);
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+.pokemon-tags.abs_tag {
+    background-color: #81c784 !important;
+    color: white !important;
+}

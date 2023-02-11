@@ -1,0 +1,19 @@
+.container-bar {
+    height: 20px;
+    width: 100%;
+    background-color: #e8e8e8;
+    border-radius: var(--border-radius);
+    .filler-bar {
+        height: 100%;
+        background-color: #81c784;
+        border-radius: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        .label-bar {
+            padding: 5px;
+            color: white;
+            font-weight: 300;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.header-pokemon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95vw;
+    margin: auto;
+    padding-block: 2vh;
+    position: relative;
+    h1 {
+        color: #2a75bb;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.pokemon-image.mobile {
+    display: none;
+}
+@media only screen and (max-width: 1000px) {
+    .pokemon-image.mobile {
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
+}
+.middle-pokemon {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #636363;
+    font-weight: 100;
+    .left,
+    .right {
+        width: 35%;
+    }
+    .pokemon-image.desktop {
+        height: auto;
+        width: 20%;
+    }
+    .left {
+        // transform: perspective(1000px) rotateY(45deg);
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        * {
+            display: flex;
+            gap: 1em;
+            h3 {
+                font-weight: 300;
+            }
+            .title {
+                width: 10ch;
+                display: flex;
+                justify-content: end;
+                h3 {
+                    font-weight: 500;
+                }
+            }
+            .wrapper {
+                display: flex;
+                gap: 0.5em;
+            }
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7em;
+        .stat {
+            display: flex;
+            gap: 1em;
+            font-weight: 500;
+            align-items: center;
+            .title {
+                width: 17ch;
+                display: flex;
+                text-transform: capitalize;
+                justify-content: end;
+            }
+            .bar {
+                width: calc(100% - 17ch);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        width: 95vw;
+        margin: auto;
+
+        .left {
+            width: 50%;
+            * {
+                display: block;
+
+                .title {
+                    display: block;
+                }
+            }
+        }
+        .right {
+            width: 50%;
+            .stat {
+                display: block;
+                .title {
+                    display: block;
+                }
+                .bar {
+                    width: calc(100%);
+                }
+            }
+        }
+
+        .desktop {
+            display: none !important;
+        }
+    }
+    @media only screen and (max-width: 560px) {
+        flex-direction: column;
+        width: 95vw;
+        .left {
+            width: 100%;
+        }
+        .right {
+            width: 100%;
+        }
+    }
+}
+.lower-moves {
+    width: 95vw;
+    margin: auto;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+}

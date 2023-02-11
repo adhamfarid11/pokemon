@@ -1,7 +1,7 @@
+/* eslint-disable */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-/* eslint-disable */
 import axios from "axios";
 import PokemonTags from "@/components/pokemon-tag";
 import { CProgress, CProgressBar } from "@coreui/react";

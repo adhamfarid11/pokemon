@@ -72,7 +72,7 @@ export default function (data) {
                         </div>
                         <div className="wrapper">
                             {data.poke.types.map((x) => (
-                                <div key={index}>
+                                <div key={x.type.name}>
                                     <PokemonTags text={x.type.name} type_tag />
                                 </div>
                             ))}

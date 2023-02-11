@@ -102,6 +102,7 @@ export default function (data) {
                 <div className="container">
                     {data.poke.moves
                         .sort((a, b) => a.move.name.localeCompare(b.move.name))
+                        // eslint-disable-next-line react/display-name
                         .map((x, index) => (
                             <div key={index}>
                                 <PokemonTags text={x.move.name} />

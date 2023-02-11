@@ -57,8 +57,8 @@ export default function (data) {
                             <h3>Abilities </h3>
                         </div>
                         <div className="wrapper">
-                            {data.poke.abilities.map((x, index) => (
-                                <div key={index}>
+                            {data.poke.abilities.map((x) => (
+                                <div key={x.ability.name}>
                                     <PokemonTags
                                         text={x.ability.name}
                                         abs_tag
@@ -86,8 +86,8 @@ export default function (data) {
                     className="pokemon-image desktop"
                 />
                 <div className="right">
-                    {data.poke.stats.map((x, index) => (
-                        <div className="stat" key={index}>
+                    {data.poke.stats.map((x) => (
+                        <div className="stat" key={x.stat.name}>
                             <div className="title">
                                 <h3>{x.stat.name}</h3>
                             </div>
@@ -104,8 +104,8 @@ export default function (data) {
                     {data.poke.moves
                         .sort((a, b) => a.move.name.localeCompare(b.move.name))
                         // eslint-disable-next-line react/display-name
-                        .map((x, index) => (
-                            <div key={index}>
+                        .map((x) => (
+                            <div key={x.move.name}>
                                 <PokemonTags text={x.move.name} />
                             </div>
                         ))}

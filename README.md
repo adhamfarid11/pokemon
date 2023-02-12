@@ -2,6 +2,10 @@
 
 > Sebuah simple website yang digunakan untuk mengecek details mengenai sebuah pokemon. Website ini menggunakan NextJS sebagai framework utamanya, dan PokeApi untuk source datanya.
 
+# Link to the Website
+
+> [https://pokemon-weld-chi.vercel.app](https://pokemon-weld-chi.vercel.app)
+
 # Tech Used
 
 -   NextJS

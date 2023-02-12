@@ -1,38 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Description
 
-## Getting Started
+> Sebuah simple website yang digunakan untuk mengecek details mengenai sebuah pokemon. Website ini menggunakan NextJS sebagai framework utamanya, dan PokeApi untuk source datanya.
 
-First, run the development server:
+# Tech Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+-   NextJS
+-   PokeApi
+-   SASS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Steps to Run the Application
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+-   Clone dari Github
+-   Buka folder yanng sudah diclone di sebuah IDE
+-   ketik "npm install" di dalam terminal
+-   ketik "npm run dev"
+-   buka pada browser link localhost yang tertera di dalam terminal (eg. http://localhost:3000)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Screenshot
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> Desktop <br/>![Home](https://media.discordapp.net/attachments/1000437373240361102/1074357984718753863/Screen_Shot_2023-02-12_at_22.43.34.png?width=2183&height=1365)<br/>![Details](https://media.discordapp.net/attachments/1000437373240361102/1074357985175945276/Screen_Shot_2023-02-12_at_22.46.49.png?width=2183&height=1365)
+> Mobile <br/> ![Home](https://media.discordapp.net/attachments/1000437373240361102/1074357985524056084/Screen_Shot_2023-02-12_at_22.47.34.png?width=633&height=1364)<br/>![Details](https://media.discordapp.net/attachments/1000437373240361102/1074357985834438666/Screen_Shot_2023-02-12_at_22.49.27.png?width=644&height=1363)

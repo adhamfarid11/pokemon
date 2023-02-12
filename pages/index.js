@@ -5,19 +5,30 @@ import axios from "axios";
 import PokemonCard from "@/components/Pokemon-Card";
 
 // Mui Material
-import { IconButton, InputBase } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import Loader from "@/components/loader";
 
 export default function Home() {
     const [pokemonList, setPokemonList] = useState([]);
+    const [counter, setCounter] = useState(18);
     const apiEndPoint = "https://pokeapi.co/api/v2/pokemon?limit=1000";
+    const [loading, setLoading] = useState(true);
+
+    // fetch pokemon data
     useEffect(() => {
         const getLists = async () => {
             const { data: res } = await axios.get(apiEndPoint);
             setPokemonList(res);
         };
         getLists();
+        setLoading(false);
     }, []);
+
+    function seeMore() {
+        setCounter(counter + 12);
+        if (counter + 12 >= pokemonList.length) {
+            setNewButton(true);
+        }
+    }
 
     return (
         <>
@@ -27,28 +38,28 @@ export default function Home() {
             <main>
                 <section className="search-container">
                     <img src="./hero.png" alt="" />
-                    <div className="search-bar">
-                        <InputBase
-                            sx={{ ml: 1, flex: 1 }}
-                            placeholder="Search Pokemon"
-                            inputProps={{ "aria-label": "search google maps" }}
-                        />
-                        <IconButton
-                            type="button"
-                            sx={{ p: "10px" }}
-                            aria-label="search"
-                        >
-                            <SearchIcon />
-                        </IconButton>
+                </section>
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <div className="wrapper-pokemon-list">
+                        <section className="pokemon-list">
+                            {pokemonList?.results
+                                ?.slice(0, counter)
+                                .map((item, index) => (
+                                    <div key={index}>
+                                        <PokemonCard
+                                            item={item}
+                                            index={index}
+                                        />
+                                    </div>
+                                ))}
+                        </section>
+                        <button className="see-more" onClick={() => seeMore()}>
+                            <p>See More</p>
+                        </button>
                     </div>
-                </section>
-                <section className="pokemon-list">
-                    {pokemonList?.results?.map((item, index) => (
-                        <div key={index}>
-                            <PokemonCard item={item} index={index} />
-                        </div>
-                    ))}
-                </section>
+                )}
             </main>
         </>
     );

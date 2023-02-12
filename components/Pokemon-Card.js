@@ -1,40 +1,56 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "./loader";
 
 export default function PokemonCard(props) {
-    const [isCardHovered, setIsCardHovered] = useState(false);
+    const [loading, setLoading] = useState(true);
     const indexPoke = props.index + 1;
-    return (
-        <Link href={"pokemon/" + indexPoke}>
-            <div
-                className="pokemon-wrapper"
-                onMouseEnter={() => setIsCardHovered(true)}
-                onMouseLeave={() => setIsCardHovered(false)}
-            >
-                <div className="pokemon-card">
-                    <img
-                        src={`/pokemon/${props.index + 1}.png`}
-                        alt={`${props.item.name}`}
-                        className="pokemon-image"
-                    />
-                    <h1 className="pokemon-title">{props.item.name}</h1>
+    const data = props.item;
+
+    const [error, setError] = useState(null);
+    const [items, setItems] = useState();
+
+    useEffect(() => {
+        fetch(data.url)
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    setItems(result);
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error);
+                    setLoading(false);
+                }
+            );
+    }, []);
+    if (loading) {
+        return (
+            <div className="pokemon-wrapper">
+                <div className="loading">
+                    <Loader mini />
                 </div>
-                <div
-                    className={`blur-bg-image ${
-                        isCardHovered ? "hovered" : ""
-                    }`}
-                    style={
-                        isCardHovered
-                            ? {
-                                  backgroundImage: `url("/pokemon/${
-                                      props.index + 1
-                                  }.png")`,
-                                  backgroundSize: "cover",
-                              }
-                            : {}
-                    }
-                ></div>
             </div>
-        </Link>
-    );
+        );
+    } else {
+        if (items != undefined) {
+            return (
+                <Link href={"pokemon/" + indexPoke}>
+                    <div className="pokemon-wrapper">
+                        <div className="pokemon-card">
+                            <img
+                                src={
+                                    items.sprites.other.dream_world
+                                        .front_default
+                                }
+                                alt={`${props.item.name}`}
+                                className="pokemon-image"
+                            />
+                            <h1 className="pokemon-title">{props.item.name}</h1>
+                        </div>
+                    </div>
+                </Link>
+            );
+        }
+    }
 }

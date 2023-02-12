@@ -16,10 +16,27 @@
         width: 20em;
     }
 }
-
-.pokemon-list {
+.wrapper-pokemon-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+    .pokemon-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: center;
+    }
+    button.see-more {
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        border: none;
+        cursor: pointer;
+        background-color: #0075be;
+        color: #ffe16b;
+        &:hover {
+            background-color: #154294;
+        }
+    }
 }

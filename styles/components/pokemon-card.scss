@@ -5,48 +5,30 @@
     box-shadow: var(--box-shadow);
     cursor: pointer;
     .pokemon-card {
-        width: 10em;
-        width: 10em;
+        width: 9em;
+        height: 9em;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 0.5em;
         padding: 1em;
+        img {
+            height: 60%;
+            width: 60%;
+        }
+        &:hover {
+            background-color: #d4eaff;
+        }
     }
-    .blur-bg-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40em;
-        height: 40em;
-        display: none;
-        background-position: center;
-        z-index: -1;
-        transition: all 1s ease;
-        display: flex;
-        filter: blur(250px);
-        -webkit-filter: blur(250px);
+    .loading {
+        width: 9em;
+        height: 9em;
+        gap: 0.5em;
+        padding: 1em;
     }
 }
 a {
     text-decoration: none;
     color: #2a75bb;
 }
-
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// position: absolute;
-// top: 50%;
-// left: 50%;
-// transform: translate(-50%, -50%);
-// object-fit: contain;
-
-// filter: blur(35px);
-// -webkit-filter: blur(35px);
-// overflow: visible;
-// img {
-//     width: 100%;
-// }

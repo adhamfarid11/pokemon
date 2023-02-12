@@ -4,7 +4,7 @@
     justify-content: space-between;
     width: 95vw;
     margin: auto;
-    padding-block: 2vh;
+    padding-block: 5vh;
     position: relative;
     h1 {
         color: #2a75bb;
@@ -31,6 +31,7 @@
     align-items: center;
     color: #636363;
     font-weight: 100;
+    padding-block: 2vh;
     .left,
     .right {
         width: 35%;
@@ -130,6 +131,7 @@
 .lower-moves {
     width: 95vw;
     margin: auto;
+    padding-block: 2vh;
     .container {
         display: flex;
         flex-wrap: wrap;

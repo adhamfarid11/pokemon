@@ -43,4 +43,12 @@ section {
     img {
         height: 20vh;
     }
+    &.mini {
+        margin: auto;
+        width: 70%;
+        height: 100%;
+        img {
+            height: 70%;
+        }
+    }
 }

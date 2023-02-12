@@ -1,21 +1,19 @@
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import axios from "axios";
 import PokemonTags from "@/components/pokemon-tag";
-import { CProgress, CProgressBar } from "@coreui/react";
 import StatBar from "@/components/Stat-Bar";
 
 import { Button } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import Head from "next/head";
 
 export default function (data) {
-    const [pokemon, setPokemon] = useState([]);
-    const apiEndPoint = "https://pokeapi.co/api/v2/pokemon/";
     const router = useRouter();
-    console.log(data.poke);
     return (
         <>
+            <Head>
+                <title>{data.poke.name} Details</title>
+            </Head>
             <div className="header-pokemon">
                 <Button
                     border="none"
@@ -27,7 +25,8 @@ export default function (data) {
                 <h1 className="pokemon-title">{data.poke.name}</h1>
             </div>
             <img
-                src={`/pokemon/${data.poke.id}.png`}
+                // src={`/pokemon/${data.poke.id}.png`}
+                src={data.poke.sprites.other.dream_world.front_default}
                 alt={`${data.poke.name}`}
                 className="pokemon-image mobile"
             />
@@ -80,7 +79,7 @@ export default function (data) {
                     </div>
                 </div>
                 <img
-                    src={`/pokemon/${data.poke.id}.png`}
+                    src={data.poke.sprites.other.dream_world.front_default}
                     alt={`${data.poke.name}`}
                     className="pokemon-image desktop"
                 />
@@ -114,6 +113,7 @@ export default function (data) {
     );
 }
 
+// fetch pokemon data
 export const getStaticPaths = async () => {
     const arrayRange = (start, stop, step) =>
         Array.from(

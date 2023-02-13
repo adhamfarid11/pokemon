@@ -27,7 +27,7 @@ git clone https://github.com/adhamfarid11/pokemon.git
 npm install
 ```
 
--   Run server di dalam local (eg. localhost:3000)<br>
+-   Run Development Server di dalam local (eg. localhost:3000)<br>
 
 ```
 npm run dev

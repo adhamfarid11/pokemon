@@ -16,11 +16,22 @@
 
 <!-- prettier-ignore -->
 -   Clone dari Github dan Buka folder yang sudah diclone di sebuah IDE<br>
-```git clone https://github.com/adhamfarid11/pokemon.git```
+
+```
+git clone https://github.com/adhamfarid11/pokemon.git
+```
+
 -   Lakukan install di dalam terminal untuk download seluruh dependencies<br>
-```npm install```
+
+```
+npm install
+```
+
 -   Run server di dalam local (eg. localhost:3000)<br>
-```npm run dev```
+
+```
+npm run dev
+```
 
 # Screenshot
 

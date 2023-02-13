@@ -9,7 +9,7 @@
 # Tech Used
 
 -   NextJS
--   PokeApi
+-   [PokeApi](https://pokeapi.co/docs/v2)
 -   SASS
 
 # Steps to Run the Application
